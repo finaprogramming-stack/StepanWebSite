@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:root {
+    --primary: #00d2ff; /* Неоновый синий */
+    --primary-glow: rgba(0, 210, 255, 0.5);
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 20px 10px;
+    position: relative;
+}
+
+/* Фон, который будет просвечивать через стекло */
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Добавь свое фото в url() */
+    background: radial-gradient(circle at top right, #1e3a8a, #0f172a), url('../img/bg.jpg') no-repeat center/cover;
+    background-blend-mode: overlay;
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- GLASSMORPHISM --- */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.text-center { text-align: center; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 25px; }
+
+.logo-text { font-size: 2.5rem; font-weight: 800; letter-spacing: 2px; }
+.highlight { color: var(--primary); text-shadow: 0 0 10px var(--primary-glow); }
+.subtitle { font-size: 1.2rem; margin: 10px 0; color: #cbd5e1; }
+.location { color: var(--text-muted); margin-bottom: 25px; font-weight: 600;}
+
+h3 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;}
+h4 { margin-bottom: 15px; }
+
+/* Кнопки */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary-glow); }
+.btn-primary:hover { background: #00b8e6; box-shadow: 0 0 25px var(--primary-glow); }
+
+.btn-wa { background: #25D366; color: white; }
+.btn-tg { background: #0088cc; color: white; }
+.btn-outline { background: transparent; color: var(--text-main); border: 1px solid var(--glass-border); }
+.btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+/* Галерея */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.gallery-item {
+    background: rgba(255,255,255,0.05);
+    height: 150px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--glass-border);
+}
+
+/* Формы */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+
+/* Отзывы */
+.review-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.reviewer-name { font-weight: bold; color: var(--primary); margin-bottom: 5px; }
+.delete-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: rgba(255, 0, 0, 0.3); color: white;
+    border: none; padding: 5px 10px; border-radius: 5px;
+    cursor: pointer; display: none; /* Скрыта по умолчанию */
+}
+/* Класс админа для показа кнопок удаления */
+body.admin-mode .delete-btn { display: block; }
+
+/* Модалка */
+.modal {
+    display: none; position: fixed; z-index: 10;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    align-items: center; justify-content: center;
+}
+.modal-content { max-width: 400px; width: 90%; position: relative; }
+.close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
+
+/* Адаптив для ПК */
+@media (min-width: 768px) {
+    .action-buttons { flex-direction: row; }
+}
