@@ -1,0 +1,284 @@
+/* --- General & Dark Theme --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
+    background-image: radial-gradient(circle at top left, rgba(255, 215, 0, 0.1), transparent 40%),
+                      radial-gradient(circle at bottom right, rgba(107, 0, 128, 0.1), transparent 30%);
+    color: #e0e0e0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    color: #ffffff;
+}
+p { color: #A1A1AA; }
+.secondary-text { color: #A1A1AA; }
+
+/* --- Header & Photo --- */
+.header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+.header .logo-gradient {
+    background: linear-gradient(45deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.header .subtitle {
+    font-size: 16px;
+    color: #A1A1AA;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.electrician-photo {
+    width: 260px; /* Управляйте шириной фото здесь */
+    height: 200px; /* Управляйте высотой фото здесь */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    /*
+      Управляйте скруглением углов здесь.
+      - Одно значение (напр. 25px) — все углы одинаковые.
+      - Четыре значения (напр. 10px 40px 10px 40px) — верхний-левый, верхний-правый, нижний-правый, нижний-левый.
+    */
+    border-radius: 25px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+#electrician-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.badge {
+    background-color: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* --- Call to Action Buttons --- */
+.cta-section { margin-top: 20px; margin-bottom: 20px; }
+.cta-button {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+.main-cta {
+    background: linear-gradient(45deg, #ffd700, #ffb300);
+    color: #000000;
+    margin-bottom: 12px;
+}
+.secondary-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.max-cta { background-color: #6a0dad; color: #ffffff; }
+.telegram-cta { background-color: #0088cc; color: #ffffff; }
+
+/* --- Glassmorphism Panels --- */
+.glass-panel {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* --- FAQ Section --- */
+.accordion-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.accordion-item:last-child { border-bottom: none; }
+.accordion-header {
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordion-header h3 { margin-bottom: 0; font-size: 18px; color: #e0e0e0; }
+.accordion-icon { font-size: 24px; font-weight: bold; transition: transform 0.3s ease; color: #ffd700; }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+.accordion-content p { padding-top: 5px; padding-bottom: 10px; }
+
+/* --- Reviews Section --- */
+.reviews-section h2 { text-align: center; }
+.reviews-container { overflow-x: auto; padding-bottom: 15px; }
+.reviews-list { display: flex; gap: 15px; padding-left: 5px; padding-right: 5px; }
+.review-card {
+    flex: 0 0 80%;
+    background: rgba(45, 45, 45, 0.8);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.review-header h4 { margin: 0; color: #ffffff; }
+.review-timestamp { font-size: 11px; color: #A1A1AA; }
+.review-card p { margin-bottom: 0; color: #c0c0c0; }
+.delete-review-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    display: none;
+}
+
+/* --- Form Elements --- */
+.add-review-form h3 { text-align: center; }
+#review-form { display: flex; flex-direction: column; gap: 10px; }
+#review-form input, #review-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+}
+#review-form button {
+    background: linear-gradient(45deg, #ffd700, #ffb300);
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+#review-form button:hover { transform: scale(1.02); }
+
+/* --- Admin & PWA --- */
+#admin-panel {
+    background-color: #000;
+    color: #ffd700;
+    padding: 10px 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 14px;
+    border-bottom: 1px solid #ffd700;
+}
+.editable[contenteditable="true"] {
+    outline: 2px dashed #ffd700;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: text;
+}
+#install-app-button {
+    display: none;
+    margin: 20px 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* --- Custom Notification --- */
+#custom-notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 2000;
+    transition: bottom 0.5s ease-in-out;
+    font-weight: 500;
+}
+#custom-notification.show {
+    bottom: 20px;
+}
+
+/* --- Footer --- */
+footer { text-align: center; padding: 30px 0; color: #A1A1AA; font-size: 12px; }
+
+/* --- Responsive Design --- */
+@media (max-width: 400px) {
+    .secondary-cta-grid { grid-template-columns: 1fr; }
+    .review-card { flex-basis: 90%; }
+}
