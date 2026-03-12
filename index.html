@@ -3,43 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Минутный выезд - Автоэлектрик в Москве и области. Выезд 24/7. Быстрая диагностика и ремонт.">
     <title>Минутный выезд - Автоэлектрик в Москве</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1a1a1a"/>
-    <style>
-        /* Critical Styles */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        .container {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .header h1 {
-            font-size: 28px;
-            text-align: center;
-            color: #ffffff;
-        }
-        .header .logo-gradient {
-            background: linear-gradient(45deg, #ffd700, #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+    <meta name="theme-color" content="#000000"/>
 </head>
 <body>
 
-    <!-- Custom Notification -->
     <div id="custom-notification"></div>
 
     <div id="admin-panel" style="display: none;">
-        <p>Режим администратора: редактирование включено. Изменения сохраняются автоматически.</p>
+        <p>Режим администратора: редактирование включено.</p>
     </div>
 
     <div class="container">
@@ -52,8 +27,9 @@
             </div>
 
             <div class="badges">
-                <span class="badge editable" data-key="badge_experience">Стаж работы: 19 лет</span>
-                <span class="badge editable" data-key="badge_location">Москва и область</span>
+                <span class="badge golden editable" data-key="badge_experience">Стаж: 19 лет</span>
+                <span class="badge golden" id="average-rating-display">⭐ 5.0</span>
+                <span class="badge golden editable" data-key="badge_location">Москва и обл.</span>
             </div>
         </header>
 
@@ -63,64 +39,64 @@
                     <span class="icon">📞</span> Позвонить мастеру
                 </a>
                 <div class="secondary-cta-grid">
-                    <a href="https://max.ru/u/f9LHodD0cOLdqnGmKqg6hKfrIrpzajS1JBrMZtjIhRh_BzFHingXOTsJjSE" target="_blank" class="cta-button max-cta">
+                    <a href="https://max.ru/u/f9LHodD0cOLdqnGmKqg6hKfrIrpzajS1JBrMZtjIhRh_BzFHingXOTsJjSE" target="_blank" rel="noopener noreferrer" class="cta-button max-cta">
                         Профиль на MAX.ru
                     </a>
-                    <a href="https://t.me/+79299789137" target="_blank" class="cta-button telegram-cta">
+                    <a href="https://t.me/+79299789137" target="_blank" rel="noopener noreferrer" class="cta-button telegram-cta">
                         <span class="icon">✈️</span> Telegram
                     </a>
                 </div>
             </section>
 
-            <section class="glass-panel transport-section">
-                <h2 class="editable" data-key="transport_header">Любой транспорт</h2>
-                <p class="secondary-text editable" data-key="transport_text">
-                    BMW, Volvo, Scania, JCB, Toyota, КАМАЗ, MAN, Mercedes-Benz, Audi, Volkswagen, Ford, Freightliner, Peterbilt, Kenworth и другие.
-                </p>
-            </section>
-
-            <section class="faq-section">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3 class="editable" data-key="faq_cost_header">Сколько стоит выезд?</h3>
-                            <span class="accordion-icon">+</span>
-                        </button>
-                        <div class="accordion-content">
-                            <p class="secondary-text editable" data-key="faq_cost_text">Стоимость выезда по Москве — от 3000 рублей. По Московской области — рассчитывается индивидуально в зависимости от удаленности.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3 class="editable" data-key="faq_schedule_header">Какой график работы?</h3>
-                            <span class="accordion-icon">+</span>
-                        </button>
-                        <div class="accordion-content">
-                            <p class="secondary-text editable" data-key="faq_schedule_text">Работаем круглосуточно, 24/7. Готовы выехать к вам в любое время дня и ночи.</p>
+            <section class="gallery-section">
+                <h2 class="editable" data-key="gallery_header">Наши работы</h2>
+                <div class="reviews-container">
+                    <div class="reviews-list">
+                        <div class="review-card gallery-item"><img src="work1.jpg" alt="Работа 1"></div>
+                        <div class="review-card gallery-item"><img src="work2.jpg" alt="Работа 2"></div>
+                        <div class="review-card gallery-item"><img src="work3.jpg" alt="Работа 3"></div>
+                        <div class="review-card gallery-more" id="open-gallery-btn">
+                            <div class="more-content"><span>➕</span><p>Все фото</p></div>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="glass-panel transport-section">
+                <h2 class="editable" data-key="transport_header">Любой транспорт</h2>
+                <p class="secondary-text editable" data-key="transport_text">Легковые, грузовые и спецтехника любой сложности.</p>
             </section>
 
             <section class="reviews-section">
-                <h2>Отзывы</h2>
+                <h2>Отзывы клиентов</h2>
                 <div class="reviews-container">
-                    <div id="reviews-list" class="reviews-list">
-                        <!-- Reviews will be loaded here by script.js -->
-                    </div>
+                    <div id="reviews-short-list" class="reviews-list">
+                        </div>
                 </div>
+
+                <div class="reviews-nav-buttons">
+                    <button id="open-all-reviews-btn" class="cta-button secondary-cta">Показать все отзывы</button>
+                </div>
+
                 <div class="glass-panel add-review-form">
                     <h3>Оставить отзыв</h3>
                     <form id="review-form">
+                        <div class="rating-selection">
+                            <span>Ваша оценка:</span>
+                            <div class="stars-input" id="stars-selector">
+                                <span data-value="1">⭐</span>
+                                <span data-value="2">⭐</span>
+                                <span data-value="3">⭐</span>
+                                <span data-value="4">⭐</span>
+                                <span data-value="5">⭐</span>
+                            </div>
+                        </div>
                         <input type="text" id="reviewer-name" placeholder="Ваше имя" required>
-                        <textarea id="review-text" placeholder="Ваш отзыв" rows="4" required></textarea>
+                        <textarea id="review-text" placeholder="Ваш отзыв" rows="3" required></textarea>
                         <button type="submit">Отправить</button>
                     </form>
                 </div>
             </section>
-
-            <button id="install-app-button" style="display: none;">Установить как приложение</button>
-
         </main>
 
         <footer>
@@ -128,6 +104,37 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <div id="full-gallery-modal" class="modal">
+        <div class="modal-header">
+            <h3>Все работы</h3>
+            <button id="close-gallery-btn">&times;</button>
+        </div>
+        <div class="modal-grid">
+            <img src="work1.jpg"><img src="work2.jpg"><img src="work3.jpg">
+            <img src="work4.jpg"><img src="work5.jpg"><img src="work6.jpg">
+        </div>
+    </div>
+
+    <div id="all-reviews-modal" class="modal">
+        <div class="modal-header">
+            <h3>Все отзывы</h3>
+            <div class="modal-info" id="reviews-modal-info">
+                <span id="reviews-count"></span>
+                <span id="reviews-average-rating"></span>
+            </div>
+            <button id="close-all-reviews-btn">&times;</button>
+        </div>
+
+        <div class="filter-bar">
+            <span>Сортировка:</span>
+            <button class="filter-btn active" data-sort="desc">Сначала с высоким рейтингом</button>
+            <button class="filter-btn" data-sort="asc">Сначала с низким рейтингом</button>
+        </div>
+
+        <div id="full-reviews-list" class="modal-reviews-container">
+            </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
 </body>
 </html>
